@@ -166,7 +166,7 @@ GameObject:
   - component: {fileID: 143530276}
   - component: {fileID: 143530277}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: WheelRL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -186,7 +186,7 @@ Transform:
   m_Children:
   - {fileID: 1652762063}
   m_Father: {fileID: 654333444}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!146 &143530277
 WheelCollider:
@@ -206,9 +206,9 @@ WheelCollider:
   m_Mass: 20
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
-    m_ExtremumSlip: 0.4
-    m_ExtremumValue: 1
-    m_AsymptoteSlip: 0.8
+    m_ExtremumSlip: 0.2
+    m_ExtremumValue: 0.8
+    m_AsymptoteSlip: 0.6
     m_AsymptoteValue: 0.5
     m_Stiffness: 1
   m_SidewaysFriction:
@@ -674,10 +674,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 143530276}
-  - {fileID: 2068419733}
   - {fileID: 678794826}
   - {fileID: 1476231981}
+  - {fileID: 143530276}
+  - {fileID: 2068419733}
   m_Father: {fileID: 1939128158}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -692,7 +692,7 @@ GameObject:
   - component: {fileID: 678794826}
   - component: {fileID: 678794827}
   m_Layer: 0
-  m_Name: GameObject (2)
+  m_Name: WheelFL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -712,7 +712,7 @@ Transform:
   m_Children:
   - {fileID: 105755609}
   m_Father: {fileID: 654333444}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!146 &678794827
 WheelCollider:
@@ -732,9 +732,9 @@ WheelCollider:
   m_Mass: 20
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
-    m_ExtremumSlip: 0.4
-    m_ExtremumValue: 1
-    m_AsymptoteSlip: 0.8
+    m_ExtremumSlip: 0.2
+    m_ExtremumValue: 0.8
+    m_AsymptoteSlip: 0.6
     m_AsymptoteValue: 0.5
     m_Stiffness: 1
   m_SidewaysFriction:
@@ -1183,7 +1183,7 @@ GameObject:
   - component: {fileID: 1476231981}
   - component: {fileID: 1476231982}
   m_Layer: 0
-  m_Name: GameObject (3)
+  m_Name: WheelFR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1203,7 +1203,7 @@ Transform:
   m_Children:
   - {fileID: 1471366250}
   m_Father: {fileID: 654333444}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!146 &1476231982
 WheelCollider:
@@ -1223,9 +1223,9 @@ WheelCollider:
   m_Mass: 20
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
-    m_ExtremumSlip: 0.4
-    m_ExtremumValue: 1
-    m_AsymptoteSlip: 0.8
+    m_ExtremumSlip: 0.2
+    m_ExtremumValue: 0.8
+    m_AsymptoteSlip: 0.6
     m_AsymptoteValue: 0.5
     m_Stiffness: 1
   m_SidewaysFriction:
@@ -1643,7 +1643,7 @@ GameObject:
   - component: {fileID: 2068419733}
   - component: {fileID: 2068419734}
   m_Layer: 0
-  m_Name: GameObject (1)
+  m_Name: WheelRR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1663,7 +1663,7 @@ Transform:
   m_Children:
   - {fileID: 1113770306}
   m_Father: {fileID: 654333444}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!146 &2068419734
 WheelCollider:
@@ -1683,9 +1683,9 @@ WheelCollider:
   m_Mass: 20
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
-    m_ExtremumSlip: 0.4
-    m_ExtremumValue: 1
-    m_AsymptoteSlip: 0.8
+    m_ExtremumSlip: 0.2
+    m_ExtremumValue: 0.8
+    m_AsymptoteSlip: 0.6
     m_AsymptoteValue: 0.5
     m_Stiffness: 1
   m_SidewaysFriction:

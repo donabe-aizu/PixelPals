@@ -12,16 +12,23 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (!collision.gameObject.CompareTag("Ground") && !collision.gameObject.CompareTag("Enemy")) return;
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (!collision.gameObject.CompareTag("Ground"))
+        {
+            DestroyBullet();
+        }
+        else if (collision.gameObject.CompareTag("Enemy"))
         {
             KillEnemy(collision.gameObject);
+            DestroyBullet();
         }
-                
-        DestroyBullet();
+        else if (collision.gameObject.CompareTag("EnemyBase"))
+        {
+            DamageEnemyBase(collision.gameObject);
+            DestroyBullet();
+        }
     }
 
-    void KillEnemy(GameObject enemy)
+    private void KillEnemy(GameObject enemy)
     {
         // ステータス更新
         Debug.Log("倒した");
@@ -30,7 +37,12 @@ public class Bullet : MonoBehaviour
         DestroyBullet();
     }
 
-    void DestroyBullet()
+    private void DamageEnemyBase(GameObject enemyBase)
+    {
+        enemyBase.GetComponent<EnemyBaseStatus>().Damage();
+    }
+
+    private void DestroyBullet()
     {
         // 爆発処理とか入れたい
         Debug.Log("爆発");
@@ -38,7 +50,7 @@ public class Bullet : MonoBehaviour
         Destroy(this.gameObject);
     }
 
-    IEnumerator BulletLife()
+    private IEnumerator BulletLife()
     {
         yield return new WaitForSeconds(5f);
         Destroy(this.gameObject);
