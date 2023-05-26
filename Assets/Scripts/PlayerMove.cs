@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CarMove : MonoBehaviour 
+public class PlayerMove : MonoBehaviour 
 {
     public List<AxleInfo> axleInfos;
     public float maxMotorTorque;
