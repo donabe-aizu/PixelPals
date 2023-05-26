@@ -32,12 +32,12 @@ namespace System
 
         private void GameClear()
         {
-            
+            // ゲームクリア処理
         }
 
         private void GameOver()
         {
-            
+            // ゲームオーバー処理
         }
     }
 }
