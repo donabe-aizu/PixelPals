@@ -8,21 +8,22 @@ public class EnemyBaseStatus : MonoBehaviour
     [SerializeField] private float maxEnemyBaseHP;
     [SerializeField] private float damage;
 
-    private float _nowHp;
+    [Header("now status")]
+    [SerializeField] private float nowHP;
     
     public event Action<float> ChangeHP;
 
     private void Start()
     {
-        _nowHp = maxEnemyBaseHP;
+        nowHP = maxEnemyBaseHP;
     }
 
     public void Damage()
     {
-        if (_nowHp<=0) return;
+        if (nowHP<=0) return;
         
-        _nowHp -= damage;
+        nowHP -= damage;
         
-        ChangeHP.Invoke(_nowHp);
+        ChangeHP?.Invoke(nowHP);
     }
 }

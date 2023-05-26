@@ -1,17 +1,17 @@
 ﻿using System;
 using UnityEngine;
 
-namespace DefaultNamespace
+namespace Player
 {
     public class PlayerHitCheck : MonoBehaviour
     {
-        public event Action<float> DamageAction;
+        public event Action DamageAction;
 
         private void OnTriggerEnter(Collider other)
         {
             if (other.gameObject.CompareTag("Enemy"))
             {
-                DamageAction.Invoke(10f);
+                DamageAction.Invoke();
             }
         }
     }

@@ -1,16 +1,18 @@
 ﻿using System;
 using UnityEngine;
 
-namespace DefaultNamespace
+namespace Player
 {
     public class PlayerStatus : MonoBehaviour
     {
+        [SerializeField] private PlayerHitCheck _hitCheck;
         [SerializeField] private float maxHP;
+        [SerializeField] private float damage;
 
         [Header("now status")]
         [SerializeField] private float nowHP;
 
-        [SerializeField] private PlayerHitCheck _hitCheck;
+        public event Action<float> PlayerHPChangeAction;
 
         private void Start()
         {
@@ -19,11 +21,13 @@ namespace DefaultNamespace
             _hitCheck.DamageAction += AddDamageAction;
         }
 
-        private void AddDamageAction(float damage)
+        private void AddDamageAction()
         {
             if (nowHP <= 0) return;
             
             nowHP -= damage;
+            
+            PlayerHPChangeAction?.Invoke(nowHP);
 
             if (nowHP <= 0)
             {
