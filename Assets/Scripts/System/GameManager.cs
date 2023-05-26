@@ -33,11 +33,13 @@ namespace System
         private void GameClear()
         {
             // ゲームクリア処理
+            Debug.Log("ゲームクリア");
         }
 
         private void GameOver()
         {
             // ゲームオーバー処理
+            Debug.Log("ゲームオーバー");
         }
     }
 }
