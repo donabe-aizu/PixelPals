@@ -7,6 +7,7 @@ namespace Player
     {
         [SerializeField] private PlayerHitCheck _hitCheck;
         [SerializeField] private float maxHP;
+        public float MaxHP => maxHP;
         [SerializeField] private float damage;
 
         [Header("now status")]

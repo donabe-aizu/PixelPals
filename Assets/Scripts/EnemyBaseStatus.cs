@@ -6,6 +6,8 @@ using UnityEngine;
 public class EnemyBaseStatus : MonoBehaviour
 {
     [SerializeField] private float maxEnemyBaseHP;
+    public float MaxHP => maxEnemyBaseHP;
+    
     [SerializeField] private float damage;
 
     [Header("now status")]
