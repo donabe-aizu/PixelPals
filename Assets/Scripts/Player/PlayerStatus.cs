@@ -8,18 +8,28 @@ namespace Player
         [SerializeField] private PlayerHitCheck _hitCheck;
         [SerializeField] private float maxHP;
         public float MaxHP => maxHP;
+        
         [SerializeField] private float damage;
 
         [Header("now status")]
         [SerializeField] private float nowHP;
 
+        [SerializeField] private int killCount = 0;
+
         public event Action<float> PlayerHPChangeAction;
+        public event Action<int> KillCountAction;
 
         private void Start()
         {
             nowHP = maxHP;
 
             _hitCheck.DamageAction += AddDamageAction;
+        }
+
+        public void AddKillCount()
+        {
+            killCount++;
+            KillCountAction?.Invoke(killCount);
         }
 
         private void AddDamageAction()

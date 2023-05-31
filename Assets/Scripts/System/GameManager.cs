@@ -7,6 +7,8 @@ namespace System
     {
         [SerializeField] private PlayerStatus _playerStatus;
         [SerializeField] private EnemyBaseStatus _enemyBaseStatus;
+        [SerializeField] private GameObject _gameClearUI;
+        [SerializeField] private GameObject _gameOverUI;
 
         private void Start()
         {
@@ -32,14 +34,12 @@ namespace System
 
         private void GameClear()
         {
-            // ゲームクリア処理
-            Debug.Log("ゲームクリア");
+            _gameClearUI.SetActive(true);
         }
 
         private void GameOver()
         {
-            // ゲームオーバー処理
-            Debug.Log("ゲームオーバー");
+            _gameOverUI.SetActive(true);
         }
     }
 }
