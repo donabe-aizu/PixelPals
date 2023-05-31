@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Player
 {
@@ -9,12 +10,20 @@ namespace Player
         [SerializeField] private Transform attackPoint;
         [SerializeField] private float attackForce = 10f;
 
+        private PlayerStatus _playerStatus;
+
+        private void Awake()
+        {
+            _playerStatus = this.GetComponent<PlayerStatus>();
+        }
+
         private void Update()
         {
             if (Input.GetMouseButtonDown(0))
             {
                 GameObject bullet = Instantiate(bulletPrefab, attackPoint.position, attackPoint.rotation);
                 bullet.GetComponent<Rigidbody>().AddRelativeForce(0,attackForce,0);
+                bullet.GetComponent<Bullet>().OnKillEnemy += _playerStatus.AddKillCount;
             }
 
             if (Input.GetKey(KeyCode.Q))
@@ -31,8 +40,6 @@ namespace Player
                     canonPrefab.transform.localEulerAngles += new Vector3(Time.deltaTime * -10, 0, 0);
                 }
             }
-            
-            Debug.Log(canonPrefab.transform.localEulerAngles);
         }
     }
 }
