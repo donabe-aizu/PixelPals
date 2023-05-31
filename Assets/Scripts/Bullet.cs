@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    [SerializeField] private GameObject explosionPrefab;
+    
     private void Start()
     {
         StartCoroutine(BulletLife());
@@ -44,9 +46,10 @@ public class Bullet : MonoBehaviour
 
     private void DestroyBullet()
     {
-        // 爆発処理とか入れたい
-        Debug.Log("爆発");
+        // 爆発処理
+        Instantiate(explosionPrefab,this.transform.position,Quaternion.identity);
             
+        // 削除
         Destroy(this.gameObject);
     }
 
