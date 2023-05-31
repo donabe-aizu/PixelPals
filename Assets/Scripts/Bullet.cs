@@ -47,7 +47,7 @@ public class Bullet : MonoBehaviour
     private void DestroyBullet()
     {
         // 爆発処理
-        Instantiate(explosionPrefab,this.transform.position,Quaternion.identity);
+        Instantiate(explosionPrefab,this.transform.position,Quaternion.identity).AddComponent<DestroyObject>().DestroyObjectByTime(3f);
             
         // 削除
         Destroy(this.gameObject);
