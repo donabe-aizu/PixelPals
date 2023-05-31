@@ -11,11 +11,11 @@ namespace System
         [SerializeField] private GameObject _gameClearUI;
         [SerializeField] private GameObject _gameOverUI;
 
-        private Transform initialPlayerTransform;
+        private Pose _initialPlayerPose;
 
         private void Start()
         {
-            initialPlayerTransform = _playerStatus.transform;
+            _initialPlayerPose = new Pose(_playerStatus.transform.position,_playerStatus.transform.rotation);
             _playerStatus.PlayerHPChangeAction += PlayerHP;
             _enemyBaseStatus.ChangeHP += EnemyBaseHP;
         }
@@ -58,8 +58,8 @@ namespace System
 
         public void Respawn()
         {
-            _playerStatus.transform.position = initialPlayerTransform.position;
-            _playerStatus.transform.rotation = initialPlayerTransform.rotation;
+            _playerStatus.transform.position = _initialPlayerPose.position;
+            _playerStatus.transform.rotation = _initialPlayerPose.rotation;
         }
     }
 }
