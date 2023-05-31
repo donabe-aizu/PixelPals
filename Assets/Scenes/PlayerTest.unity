@@ -293,6 +293,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 48495244}
   m_CullTransparentMesh: 1
+--- !u!1 &63302165 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1782528275060748458, guid: 386e54541fe213d47ae325bc451b80db,
+    type: 3}
+  m_PrefabInstance: {fileID: 1782528276039516274}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &122574713
 GameObject:
   m_ObjectHideFlags: 0
@@ -3597,6 +3603,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1782528275060748459, guid: 386e54541fe213d47ae325bc451b80db,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9961947
+      objectReference: {fileID: 0}
+    - target: {fileID: 1782528275060748459, guid: 386e54541fe213d47ae325bc451b80db,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.08715578
+      objectReference: {fileID: 0}
+    - target: {fileID: 1782528275060748459, guid: 386e54541fe213d47ae325bc451b80db,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1782528275193036562, guid: 386e54541fe213d47ae325bc451b80db,
+        type: 3}
+      propertyPath: canonPrefab
+      value: 
+      objectReference: {fileID: 63302165}
     - target: {fileID: 1782528275193036587, guid: 386e54541fe213d47ae325bc451b80db,
         type: 3}
       propertyPath: m_Name
