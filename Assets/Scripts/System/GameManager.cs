@@ -1,5 +1,6 @@
 ﻿using Player;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace System
 {
@@ -7,9 +8,14 @@ namespace System
     {
         [SerializeField] private PlayerStatus _playerStatus;
         [SerializeField] private EnemyBaseStatus _enemyBaseStatus;
+        [SerializeField] private GameObject _gameClearUI;
+        [SerializeField] private GameObject _gameOverUI;
+
+        private Pose _initialPlayerPose;
 
         private void Start()
         {
+            _initialPlayerPose = new Pose(_playerStatus.transform.position,_playerStatus.transform.rotation);
             _playerStatus.PlayerHPChangeAction += PlayerHP;
             _enemyBaseStatus.ChangeHP += EnemyBaseHP;
         }
@@ -32,14 +38,28 @@ namespace System
 
         private void GameClear()
         {
-            // ゲームクリア処理
-            Debug.Log("ゲームクリア");
+            _gameClearUI.SetActive(true);
         }
 
         private void GameOver()
         {
-            // ゲームオーバー処理
-            Debug.Log("ゲームオーバー");
+            _gameOverUI.SetActive(true);
+        }
+
+        public void ReturnTitle()
+        {
+            SceneManager.LoadScene(0);
+        }
+
+        public void Restart()
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+
+        public void Respawn()
+        {
+            _playerStatus.transform.position = _initialPlayerPose.position;
+            _playerStatus.transform.rotation = _initialPlayerPose.rotation;
         }
     }
 }

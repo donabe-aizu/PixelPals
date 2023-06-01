@@ -7,6 +7,8 @@ public class Bullet : MonoBehaviour
 {
     [SerializeField] private GameObject explosionPrefab;
     
+    public event Action OnKillEnemy;
+    
     private void Start()
     {
         StartCoroutine(BulletLife());
@@ -34,6 +36,7 @@ public class Bullet : MonoBehaviour
     {
         // ステータス更新
         Debug.Log("倒した");
+        OnKillEnemy.Invoke();
             
         Destroy(enemy);
         DestroyBullet();
@@ -47,7 +50,7 @@ public class Bullet : MonoBehaviour
     private void DestroyBullet()
     {
         // 爆発処理
-        Instantiate(explosionPrefab,this.transform.position,Quaternion.identity);
+        Instantiate(explosionPrefab,this.transform.position,Quaternion.identity).AddComponent<DestroyObject>().DestroyObjectByTime(3f);
             
         // 削除
         Destroy(this.gameObject);
