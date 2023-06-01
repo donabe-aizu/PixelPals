@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class EnemyMove : MonoBehaviour
 {
-    public GameObject _targetObject;
+    public GameObject targetObject;
     private NavMeshAgent _navMeshAgent;
     
     void Start()
@@ -17,7 +17,7 @@ public class EnemyMove : MonoBehaviour
     {
         // NavMeshが準備できているなら
         if(_navMeshAgent.pathStatus != NavMeshPathStatus.PathInvalid) {
-            _navMeshAgent.SetDestination(_targetObject.transform.position);
+            _navMeshAgent.SetDestination(targetObject.transform.position);
         }
     }
 }

@@ -34,8 +34,6 @@ public class Bullet : MonoBehaviour
 
     private void KillEnemy(GameObject enemy)
     {
-        // ステータス更新
-        Debug.Log("倒した");
         OnKillEnemy.Invoke();
             
         Destroy(enemy);
