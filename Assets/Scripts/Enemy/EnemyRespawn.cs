@@ -1,7 +1,10 @@
+using System;
 using UnityEngine;
 
 public class EnemyRespawn : MonoBehaviour
 {
+    [SerializeField] private GameManager gameManager;
+    
     [SerializeField] private GameObject enemy;
 
     [SerializeField] private float respawnDuration;
@@ -40,7 +43,8 @@ public class EnemyRespawn : MonoBehaviour
     //　敵出現メソッド
     private void RespawnEnemy()
     {
-        Instantiate(enemy, transform.position, Quaternion.Euler(0f, 0f, 0f));
+        Instantiate(enemy, transform.position, Quaternion.Euler(0f, 0f, 0f))
+            .GetComponent<EnemyMove>().targetObject = gameManager.Player;
         respawnedEnemyCount++;
         respawnElapsedTime = 0f;
     }

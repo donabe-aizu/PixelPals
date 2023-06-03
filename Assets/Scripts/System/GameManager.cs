@@ -12,6 +12,8 @@ namespace System
         [SerializeField] private GameObject _gameClearUI;
         [SerializeField] private GameObject _gameOverUI;
 
+        public GameObject Player => _playerStatus.gameObject;
+
         private Pose _initialPlayerPose;
 
         private bool _isOpenMenu = false;
