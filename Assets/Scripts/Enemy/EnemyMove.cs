@@ -18,6 +18,9 @@ public class EnemyMove : MonoBehaviour
         // NavMeshが準備できているなら
         if(_navMeshAgent.pathStatus != NavMeshPathStatus.PathInvalid) {
             _navMeshAgent.SetDestination(targetObject.transform.position);
+            
+            // 時間が経過するごとに敵の速度が増していく
+            _navMeshAgent.speed += 0.002f;
         }
     }
 }
