@@ -9,12 +9,16 @@ namespace Player
         [SerializeField] private GameObject bulletPrefab;
         [SerializeField] private Transform attackPoint;
         [SerializeField] private float attackForce = 10f;
+        [SerializeField] private AudioClip shootingSE;
+        
+        private AudioSource _source;
 
         private PlayerStatus _playerStatus;
 
         private void Awake()
         {
             _playerStatus = this.GetComponent<PlayerStatus>();
+            _source = this.GetComponent<AudioSource>();
         }
 
         private void Update()
@@ -24,6 +28,7 @@ namespace Player
                 GameObject bullet = Instantiate(bulletPrefab, attackPoint.position, attackPoint.rotation);
                 bullet.GetComponent<Rigidbody>().AddRelativeForce(0,attackForce,0);
                 bullet.GetComponent<Bullet>().OnKillEnemy += _playerStatus.AddKillCount;
+                _source.PlayOneShot(shootingSE);
             }
 
             if (Input.GetKey(KeyCode.Q))
