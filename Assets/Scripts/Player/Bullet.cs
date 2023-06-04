@@ -57,7 +57,6 @@ public class Bullet : MonoBehaviour
         Instantiate(explosionPrefab,this.transform.position,Quaternion.identity).AddComponent<DestroyObject>().DestroyObjectByTime(3f);
         
         // 爆発SE処理
-        // StartCoroutine(PlayOneShotAndDestroy(explodeBulletSE));
         StartCoroutine(PlayOneShotAndDestroy(explodeBulletSE));
     }
     
