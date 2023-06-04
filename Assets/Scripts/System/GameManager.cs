@@ -65,17 +65,19 @@ namespace System
         private void ChangeCursorVisible(bool isVisible)
         {
             Cursor.visible = isVisible;
-            Cursor.lockState = isVisible ? CursorLockMode.Locked : CursorLockMode.Confined;
+            Cursor.lockState = isVisible ? CursorLockMode.Locked : CursorLockMode.None;
         }
 
         private void GameClear()
         {
             _gameClearUI.SetActive(true);
+            ChangeCursorVisible(true);
         }
 
         private void GameOver()
         {
             _gameOverUI.SetActive(true);
+            ChangeCursorVisible(true);
         }
 
         public void ReturnTitle()
