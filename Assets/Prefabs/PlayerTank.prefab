@@ -283,10 +283,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab2daf179c7b465f8eca89b55c1a028d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canonPrefab: {fileID: 1782528275060748458}
   bulletPrefab: {fileID: 4097633217791117081, guid: c5688818a864126448368ca85d91cf6b,
     type: 3}
   attackPoint: {fileID: 1782528275027277173}
   attackForce: 1000
+  shootingSE: {fileID: 8300000, guid: e05d7674fd6641d049656df37b4a309c, type: 3}
 --- !u!114 &1782528275193036563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -303,6 +305,7 @@ MonoBehaviour:
   maxHP: 100
   damage: 10
   nowHP: 0
+  killCount: 0
 --- !u!65 &1782528275193036560
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -328,6 +331,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa21eb26a2204f40b30bea28a6d5d8c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerDamagedSE: {fileID: 8300000, guid: 3bb923c91dbefd2509141c44ff15079f, type: 3}
 --- !u!1 &1782528275313415398
 GameObject:
   m_ObjectHideFlags: 0
